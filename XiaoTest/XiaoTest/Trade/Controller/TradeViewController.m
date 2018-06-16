@@ -7,7 +7,7 @@
 //
 
 #import "TradeViewController.h"
-
+#import "TradeHeaderView.h"
 
 @interface TradeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -23,7 +23,9 @@
     [self.view addSubview:_tableView];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.sectionFooterHeight = 10.0f;
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    [_tableView registerClass:[TradeHeaderView class] forHeaderFooterViewReuseIdentifier:@"TradeHeaderView"];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_offset(@0);
         make.left.mas_offset(@0);
@@ -45,6 +47,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
     return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    TradeHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"TradeHeaderView"];
+    [headerView configureModel:nil];
+    return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 245.0f;
 }
 
 - (void)didReceiveMemoryWarning {

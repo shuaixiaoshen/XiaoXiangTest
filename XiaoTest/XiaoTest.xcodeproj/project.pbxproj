@@ -33,6 +33,11 @@
 		6454C7A920CF8E4A00157BD4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6454C79B20CF8E4A00157BD4 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		6454C7AA20CF8E4A00157BD4 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6454C79D20CF8E4A00157BD4 /* View+MASAdditions.m */; };
 		6454C7AB20CF8E4A00157BD4 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6454C7A020CF8E4A00157BD4 /* ViewController+MASAdditions.m */; };
+		64B2580F20D4C2B400EBEBDE /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B2580D20D4C2B400EBEBDE /* HomeViewCell.m */; };
+		64B2581020D4C2B400EBEBDE /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64B2580E20D4C2B400EBEBDE /* HomeViewCell.xib */; };
+		64B2581420D4C4FB00EBEBDE /* HomeFootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B2581220D4C4FB00EBEBDE /* HomeFootCell.m */; };
+		64B2581520D4C4FB00EBEBDE /* HomeFootCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64B2581320D4C4FB00EBEBDE /* HomeFootCell.xib */; };
+		64B2581820D4CD7600EBEBDE /* TradeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B2581720D4CD7600EBEBDE /* TradeHeaderView.m */; };
 		64BAF27020D372490052C91F /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAF26320D372490052C91F /* TAAbstractDotView.m */; };
 		64BAF27120D372490052C91F /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAF26520D372490052C91F /* TAAnimatedDotView.m */; };
 		64BAF27220D372490052C91F /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAF26720D372490052C91F /* TADotView.m */; };
@@ -136,6 +141,14 @@
 		6454C79E20CF8E4A00157BD4 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		6454C79F20CF8E4A00157BD4 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		6454C7A020CF8E4A00157BD4 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		64B2580C20D4C2B400EBEBDE /* HomeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewCell.h; sourceTree = "<group>"; };
+		64B2580D20D4C2B400EBEBDE /* HomeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewCell.m; sourceTree = "<group>"; };
+		64B2580E20D4C2B400EBEBDE /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
+		64B2581120D4C4FB00EBEBDE /* HomeFootCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFootCell.h; sourceTree = "<group>"; };
+		64B2581220D4C4FB00EBEBDE /* HomeFootCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFootCell.m; sourceTree = "<group>"; };
+		64B2581320D4C4FB00EBEBDE /* HomeFootCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFootCell.xib; sourceTree = "<group>"; };
+		64B2581620D4CD7600EBEBDE /* TradeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TradeHeaderView.h; sourceTree = "<group>"; };
+		64B2581720D4CD7600EBEBDE /* TradeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TradeHeaderView.m; sourceTree = "<group>"; };
 		64BAF26220D372490052C91F /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		64BAF26320D372490052C91F /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		64BAF26420D372490052C91F /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -329,6 +342,12 @@
 		6454C77220CF84E200157BD4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				64B2580C20D4C2B400EBEBDE /* HomeViewCell.h */,
+				64B2580D20D4C2B400EBEBDE /* HomeViewCell.m */,
+				64B2580E20D4C2B400EBEBDE /* HomeViewCell.xib */,
+				64B2581120D4C4FB00EBEBDE /* HomeFootCell.h */,
+				64B2581220D4C4FB00EBEBDE /* HomeFootCell.m */,
+				64B2581320D4C4FB00EBEBDE /* HomeFootCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -352,6 +371,8 @@
 		6454C77520CF84F600157BD4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				64B2581620D4CD7600EBEBDE /* TradeHeaderView.h */,
+				64B2581720D4CD7600EBEBDE /* TradeHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -620,6 +641,8 @@
 			files = (
 				64BAF29F20D375580052C91F /* README.md in Resources */,
 				6454C7A120CF8E4A00157BD4 /* Info.plist in Resources */,
+				64B2581520D4C4FB00EBEBDE /* HomeFootCell.xib in Resources */,
+				64B2581020D4C2B400EBEBDE /* HomeViewCell.xib in Resources */,
 				6436F80A20CE35490045FDE0 /* LaunchScreen.storyboard in Resources */,
 				6436F80720CE35490045FDE0 /* Assets.xcassets in Resources */,
 				6436F80520CE35490045FDE0 /* Main.storyboard in Resources */,
@@ -659,6 +682,7 @@
 				6436F7FF20CE35490045FDE0 /* AppDelegate.m in Sources */,
 				64BAF2A320D375580052C91F /* SDImageCacheConfig.m in Sources */,
 				64BAF27320D372490052C91F /* TAPageControl.m in Sources */,
+				64B2581820D4CD7600EBEBDE /* TradeHeaderView.m in Sources */,
 				64BAF2A420D375580052C91F /* SDWebImageCompat.m in Sources */,
 				6454C7AA20CF8E4A00157BD4 /* View+MASAdditions.m in Sources */,
 				64BAF2A920D375580052C91F /* SDWebImagePrefetcher.m in Sources */,
@@ -671,6 +695,7 @@
 				64BAF27120D372490052C91F /* TAAnimatedDotView.m in Sources */,
 				64BAF2A520D375580052C91F /* SDWebImageDecoder.m in Sources */,
 				64BAF27220D372490052C91F /* TADotView.m in Sources */,
+				64B2580F20D4C2B400EBEBDE /* HomeViewCell.m in Sources */,
 				64BAF27020D372490052C91F /* TAAbstractDotView.m in Sources */,
 				64BAF2A820D375580052C91F /* SDWebImageManager.m in Sources */,
 				6454C76520CF830900157BD4 /* RootViewController.m in Sources */,
@@ -685,6 +710,7 @@
 				64BAF2AE20D375580052C91F /* UIImageView+WebCache.m in Sources */,
 				64BAF2AC20D375580052C91F /* UIImage+MultiFormat.m in Sources */,
 				64BAF2AA20D375580052C91F /* UIButton+WebCache.m in Sources */,
+				64B2581420D4C4FB00EBEBDE /* HomeFootCell.m in Sources */,
 				6454C7AB20CF8E4A00157BD4 /* ViewController+MASAdditions.m in Sources */,
 				6454C7A720CF8E4A00157BD4 /* MASViewConstraint.m in Sources */,
 				6454C77C20CF851E00157BD4 /* HomeViewController.m in Sources */,
