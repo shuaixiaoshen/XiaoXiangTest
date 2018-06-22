@@ -11,7 +11,7 @@
 @implementation TradeHeaderView
 
 - (void)configureModel:(id)model{
-    self.backgroundColor = [UIColor whiteColor];
+    self.contentView.backgroundColor = [UIColor whiteColor];
     UIImageView *headerImg = [[UIImageView alloc] init];
     headerImg.image = [UIImage imageNamed:@"trade_normal"];
     [self.contentView addSubview:headerImg];
@@ -83,6 +83,52 @@
     [self addDetailViewWith:headerImg andIndex:0];
     [self addDetailViewWith:headerImg andIndex:1];
     [self addDetailViewWith:headerImg andIndex:2];
+    UIView *footView = [[UIView alloc] init];
+    [self.contentView addSubview:footView];
+    [footView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_offset(@0);
+        make.right.mas_offset(@0);
+        make.top.equalTo(headerImg.mas_bottom);
+        make.bottom.mas_offset(@0);
+    }];
+    UIImageView *activeImg = [[UIImageView alloc] init];
+    [footView addSubview:activeImg];
+    activeImg.image = [UIImage imageNamed:@"trade_edit"];
+    activeImg.contentMode = UIViewContentModeCenter;
+    [activeImg mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_offset(@13);
+        make.bottom.mas_offset(@0);
+        make.top.mas_offset(@3);
+        make.width.mas_offset(@30);
+    }];
+    UILabel *eidtLab = [[UILabel alloc] initWithFrame:CGRectZero];
+    eidtLab.textAlignment = NSTextAlignmentLeft;
+    eidtLab.font = [UIFont boldSystemFontOfSize:14];
+    eidtLab.textColor = [UIColor darkTextColor];
+    [footView addSubview:eidtLab];
+    eidtLab.text = @"租赁缴纳记录";
+    [eidtLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(activeImg);
+        make.left.equalTo(activeImg.mas_right);
+    }];
+    UIButton *activeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [activeBtn setImage:[UIImage imageNamed:@"my_09"] forState:UIControlStateNormal];
+    [footView addSubview:activeBtn];
+    activeBtn.contentMode = UIViewContentModeCenter;
+    [activeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_offset(@-13);
+        make.centerY.equalTo(footView);
+        make.width.mas_offset(50);
+    }];
+    UILabel *lineLab = [[UILabel alloc] init];
+    lineLab.backgroundColor = [UIColor grayColor];
+    [footView addSubview:lineLab];
+    [lineLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_offset(@0);
+        make.height.mas_offset(@.5);
+        make.left.mas_offset(@0);
+        make.bottom.mas_offset(@0);
+    }];
 }
 
 - (void)addDetailViewWith:(UIImageView *)headerImg andIndex:(NSInteger)index{

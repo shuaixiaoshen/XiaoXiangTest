@@ -8,7 +8,6 @@
 
 #import "MyViewController.h"
 #import "MyCell.h"
-#import "NaviBarView.h"
 
 @interface MyViewController ()<UITableViewDelegate,UITableViewDataSource>
 

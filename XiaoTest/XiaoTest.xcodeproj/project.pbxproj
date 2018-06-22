@@ -33,6 +33,8 @@
 		6454C7A920CF8E4A00157BD4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6454C79B20CF8E4A00157BD4 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		6454C7AA20CF8E4A00157BD4 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6454C79D20CF8E4A00157BD4 /* View+MASAdditions.m */; };
 		6454C7AB20CF8E4A00157BD4 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6454C7A020CF8E4A00157BD4 /* ViewController+MASAdditions.m */; };
+		646944E720D861D000A48C30 /* TradeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 646944E620D861D000A48C30 /* TradeViewCell.m */; };
+		646944EB20D8930B00A48C30 /* SignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 646944EA20D8930B00A48C30 /* SignViewController.m */; };
 		64B2580F20D4C2B400EBEBDE /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B2580D20D4C2B400EBEBDE /* HomeViewCell.m */; };
 		64B2581020D4C2B400EBEBDE /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64B2580E20D4C2B400EBEBDE /* HomeViewCell.xib */; };
 		64B2581420D4C4FB00EBEBDE /* HomeFootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B2581220D4C4FB00EBEBDE /* HomeFootCell.m */; };
@@ -141,6 +143,10 @@
 		6454C79E20CF8E4A00157BD4 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		6454C79F20CF8E4A00157BD4 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		6454C7A020CF8E4A00157BD4 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		646944E520D861D000A48C30 /* TradeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TradeViewCell.h; sourceTree = "<group>"; };
+		646944E620D861D000A48C30 /* TradeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TradeViewCell.m; sourceTree = "<group>"; };
+		646944E920D8930B00A48C30 /* SignViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignViewController.h; sourceTree = "<group>"; };
+		646944EA20D8930B00A48C30 /* SignViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignViewController.m; sourceTree = "<group>"; };
 		64B2580C20D4C2B400EBEBDE /* HomeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewCell.h; sourceTree = "<group>"; };
 		64B2580D20D4C2B400EBEBDE /* HomeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewCell.m; sourceTree = "<group>"; };
 		64B2580E20D4C2B400EBEBDE /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
@@ -255,6 +261,7 @@
 				6436F7FD20CE35490045FDE0 /* AppDelegate.h */,
 				6436F7FE20CE35490045FDE0 /* AppDelegate.m */,
 				64517A3E20D21F1E00D68860 /* PrefixHeader.pch */,
+				646944E820D892E900A48C30 /* Sign */,
 				6454C77020CF84D500157BD4 /* Home */,
 				6454C76F20CF84CC00157BD4 /* Trade */,
 				6454C76E20CF84B300157BD4 /* My */,
@@ -373,6 +380,8 @@
 			children = (
 				64B2581620D4CD7600EBEBDE /* TradeHeaderView.h */,
 				64B2581720D4CD7600EBEBDE /* TradeHeaderView.m */,
+				646944E520D861D000A48C30 /* TradeViewCell.h */,
+				646944E620D861D000A48C30 /* TradeViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -450,6 +459,15 @@
 				6454C7A020CF8E4A00157BD4 /* ViewController+MASAdditions.m */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		646944E820D892E900A48C30 /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				646944E920D8930B00A48C30 /* SignViewController.h */,
+				646944EA20D8930B00A48C30 /* SignViewController.m */,
+			);
+			path = Sign;
 			sourceTree = "<group>";
 		};
 		64BAF26020D372490052C91F /* SDCycleScrollView */ = {
@@ -674,6 +692,7 @@
 				64BAF2AB20D375580052C91F /* UIImage+GIF.m in Sources */,
 				6436F80D20CE35490045FDE0 /* main.m in Sources */,
 				64BAF2A120D375580052C91F /* NSImage+WebCache.m in Sources */,
+				646944EB20D8930B00A48C30 /* SignViewController.m in Sources */,
 				6454C76920CF844E00157BD4 /* BaseViewController.m in Sources */,
 				64BAF2B020D375580052C91F /* UIView+WebCacheOperation.m in Sources */,
 				6454C7A820CF8E4A00157BD4 /* NSArray+MASAdditions.m in Sources */,
@@ -692,6 +711,7 @@
 				6454C7A320CF8E4A00157BD4 /* MASConstraint.m in Sources */,
 				6454C7A920CF8E4A00157BD4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				6454C7A220CF8E4A00157BD4 /* MASCompositeConstraint.m in Sources */,
+				646944E720D861D000A48C30 /* TradeViewCell.m in Sources */,
 				64BAF27120D372490052C91F /* TAAnimatedDotView.m in Sources */,
 				64BAF2A520D375580052C91F /* SDWebImageDecoder.m in Sources */,
 				64BAF27220D372490052C91F /* TADotView.m in Sources */,
