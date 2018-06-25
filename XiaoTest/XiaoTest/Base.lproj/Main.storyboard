@@ -76,7 +76,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0LA-fP-Vbd">
-                                        <rect key="frame" x="182" y="59" width="10" height="3"/>
+                                        <rect key="frame" x="182" y="57" width="10" height="3"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="3" id="5Qd-gF-80A"/>
@@ -96,7 +96,7 @@
                                     <constraint firstItem="nd6-5P-QXf" firstAttribute="width" secondItem="ga9-mn-3y6" secondAttribute="width" id="4wI-Gk-OCt"/>
                                     <constraint firstAttribute="height" constant="64" id="5fx-dh-dOm"/>
                                     <constraint firstItem="UUA-Gs-2g3" firstAttribute="leading" secondItem="ga9-mn-3y6" secondAttribute="trailing" id="7zP-QB-PDG"/>
-                                    <constraint firstItem="0LA-fP-Vbd" firstAttribute="top" secondItem="UUA-Gs-2g3" secondAttribute="bottom" constant="2" id="AH2-IO-H72"/>
+                                    <constraint firstItem="0LA-fP-Vbd" firstAttribute="top" secondItem="UUA-Gs-2g3" secondAttribute="bottom" id="AH2-IO-H72"/>
                                     <constraint firstAttribute="bottom" secondItem="ga9-mn-3y6" secondAttribute="bottom" constant="7" id="DCY-F4-bZi"/>
                                     <constraint firstItem="uZY-sD-8gg" firstAttribute="centerY" secondItem="UUA-Gs-2g3" secondAttribute="centerY" id="EMi-FO-ScR"/>
                                     <constraint firstAttribute="bottom" secondItem="UUA-Gs-2g3" secondAttribute="bottom" constant="7" id="FzX-3m-6Ho"/>
