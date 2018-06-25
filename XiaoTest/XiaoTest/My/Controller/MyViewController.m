@@ -7,11 +7,13 @@
 //
 
 #import "MyViewController.h"
+#import "SettingViewController.h"
 #import "MyCell.h"
 
 @interface MyViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (strong, nonatomic) UITableView *tableView;
+@property (weak, nonatomic) IBOutlet NaviBarView *naviBar;
 
 @end
 
@@ -19,8 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NaviBarView *navi = [NaviBarView defaultNaviBarWith:self.view];
-    navi.titleName = @"乐享租";
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     [self.view addSubview:_tableView];
     _tableView.delegate = self;
@@ -29,7 +29,7 @@
     [_tableView registerClass:[MyCell class] forCellReuseIdentifier:@"cell"];
     _tableView.sectionFooterHeight = 0.0f;
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(navi.mas_bottom);
+        make.top.equalTo(_naviBar.mas_bottom);
         make.left.mas_offset(@0);
         make.right.mas_offset(@0);
         make.bottom.mas_offset(@0);
@@ -124,6 +124,11 @@
         return 150;
     }
     return 5;
+}
+- (IBAction)pushSettingController {
+    SettingViewController *vc = [SBMain instantiateViewControllerWithIdentifier:@"SettingViewController"];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

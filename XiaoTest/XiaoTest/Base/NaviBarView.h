@@ -1,18 +1,19 @@
 //
 //  NaviBarView.h
-//  XiaoTest
+//  YYTest
 //
-//  Created by shen on 2018/6/13.
-//  Copyright © 2018年 shen. All rights reserved.
+//  Created by shen on 2017/3/22.
+//  Copyright © 2017年 dingyuankeji. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 @interface NaviBarView : UIView
 
-@property (assign, nonatomic) BOOL showBackBtn;
-@property (strong, nonatomic) NSString *titleName;
+@property (copy, nonatomic) NSString *title;
+@property (strong, nonatomic) UIButton *backBtn;
+@property (assign, nonatomic) BOOL isHidden;
 
-+ (NaviBarView *)defaultNaviBarWith:(UIView *)aView;
+@property (assign, nonatomic) BOOL isBackRootVC;
 
 @end

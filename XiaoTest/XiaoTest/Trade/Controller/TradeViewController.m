@@ -13,6 +13,12 @@
 @interface TradeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (strong, nonatomic) UITableView *tableView;
+@property (weak, nonatomic) IBOutlet NaviBarView *naviBar;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lineX;
+
+@property (weak, nonatomic) IBOutlet UIButton *header_one;
+@property (weak, nonatomic) IBOutlet UIButton *header_two;
+@property (weak, nonatomic) IBOutlet UIButton *header_three;
 
 @end
 
@@ -20,8 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NaviBarView *naviBar = [NaviBarView defaultNaviBarWith:self.view];
-    naviBar.titleName = @"订单";
+    _lineX.constant = -60.0f;
+    [self.view updateConstraintsIfNeeded];
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     [self.view addSubview:_tableView];
     _tableView.delegate = self;
@@ -31,7 +37,7 @@
     [_tableView registerClass:[TradeViewCell class] forCellReuseIdentifier:@"cell"];
     [_tableView registerClass:[TradeHeaderView class] forHeaderFooterViewReuseIdentifier:@"TradeHeaderView"];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(naviBar.mas_bottom);
+        make.top.equalTo(_naviBar.mas_bottom);
         make.left.mas_offset(@0);
         make.right.mas_offset(@0);
         make.bottom.mas_offset(@0);
@@ -66,6 +72,30 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SignViewController *signVc = [[SignViewController alloc] init];
     [self presentViewController:signVc animated:YES completion:nil];
+}
+#pragma mark - 按钮切换 -
+
+- (IBAction)handleTouchHeaderBtn:(UIButton *)sender {
+    NSString *btnStr = sender.titleLabel.text;
+    if ([btnStr isEqualToString:@"已完成"]) {
+        _lineX.constant = -60.0f;
+         [_header_one setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_header_two setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [_header_three setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    }else if ([btnStr isEqualToString:@"待还"]){
+        _lineX.constant = 0.0f;
+        [_header_one setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [_header_two setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_header_three setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    }else{
+        _lineX.constant = 60.0f;
+        [_header_one setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [_header_two setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [_header_three setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
+    [self.view updateConstraintsIfNeeded];
+}
+- (IBAction)traerChat:(UIButton *)sender {
 }
 
 - (void)didReceiveMemoryWarning {

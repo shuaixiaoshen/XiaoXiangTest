@@ -10,4 +10,8 @@
 
 @interface BaseViewController : UIViewController
 
+- (void)postWithURLString:(NSString *)URLString parameters:(id)parameters success:(void (^)(id _Nullable))success failure:(void (^)(NSString * _Nullable))failure;
+
+- (void)getToken;
+
 @end

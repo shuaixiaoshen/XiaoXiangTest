@@ -8,6 +8,7 @@
 
 #import "SignViewController.h"
 
+
 @interface SignViewController ()
 
 @property(strong, nonatomic) UIScrollView *scrollView;
@@ -16,7 +17,9 @@
 @property(strong, nonatomic) UITextField *passwordField;
 @end
 
-@implementation SignViewController
+@implementation SignViewController{
+    NSString *yzmToken;
+}
 
 - (UIScrollView *)scrollView{
     if (!_scrollView) {
@@ -31,6 +34,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UITapGestureRecognizer *cancleField = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(endEdit)];
+    [self.view addGestureRecognizer:cancleField];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.scrollView];
     [self addHeaderLogo];
@@ -131,6 +136,7 @@
     sendBtn.layer.cornerRadius = 15.0f;
     sendBtn.layer.masksToBounds = YES;
     sendBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [sendBtn addTarget:self action:@selector(handleSendCode) forControlEvents:UIControlEventTouchUpInside];
     [passwordView addSubview:sendBtn];
     [sendBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_offset(@0);
@@ -162,6 +168,7 @@
     fastBtn.layer.cornerRadius = 18.0f;
     fastBtn.layer.masksToBounds = YES;
     fastBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [fastBtn addTarget:self action:@selector(handleSignBtn) forControlEvents:UIControlEventTouchUpInside];
     [midView addSubview:fastBtn];
     [fastBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_offset(@-20);
@@ -178,7 +185,7 @@
     [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_offset(@0);
         make.bottom.mas_offset(@-15);
-        make.top.equalTo(midView.mas_bottom).mas_offset(0);
+        make.height.mas_offset(@20);
     }];
     UILabel *signLab = [[UILabel alloc] init];
     [bottomView addSubview:signLab];
@@ -197,6 +204,61 @@
         make.left.equalTo(signLab.mas_right);
         make.centerY.equalTo(bottomView);
     }];
+}
+
+#pragma mark - 按钮事件 -
+
+- (void)handleSendCode{
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setValue:_moblieField.text forKey:@"phone"];
+    [dic setValue:[NSString stringWithFormat:@"%@%@%@",[self getRandomStringWithNum:6],NSUserDefaultsGet(Session_token),[self getRandomStringWithNum:6]] forKey:@"token"];
+    [self postWithURLString:[NSString stringWithFormat:@"%@/custom/sendRegistCode",KBaseUrl] parameters:dic success:^(id _Nullable data) {
+        NSLog(@"%@",data);
+        yzmToken = [data valueForKey:@"data"];
+    } failure:^(NSString * _Nullable error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+- (void)handleSignBtn{
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setValue:_moblieField.text forKey:@"phone"];
+    [dic setValue:yzmToken forKey:@"yzmToken"];
+    [dic setValue:_passwordField.text forKey:@"yzmCode"];
+    [self postWithURLString:[NSString stringWithFormat:@"%@/custom/register",KBaseUrl] parameters:dic success:^(id _Nullable data) {
+        NSLog(@"%@",data);
+    } failure:^(NSString * _Nullable error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+/**
+ 随机数生成
+ 
+ @param num 位数
+ @return 随机数
+ */
+- (NSString *)getRandomStringWithNum:(NSInteger)num
+{
+    NSString *string = [[NSString alloc]init];
+    for (int i = 0; i < num; i++) {
+        int number = arc4random() % 36;
+        if (number < 10) {
+            int figure = arc4random() % 10;
+            NSString *tempString = [NSString stringWithFormat:@"%d", figure];
+            string = [string stringByAppendingString:tempString];
+        }else {
+            int figure = (arc4random() % 26) + 97;
+            char character = figure;
+            NSString *tempString = [NSString stringWithFormat:@"%c", character];
+            string = [string stringByAppendingString:tempString];
+        }
+    }
+    return string;
+}
+
+- (void)endEdit{
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {

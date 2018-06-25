@@ -17,8 +17,8 @@
 
 @implementation TabViewController
 
-- (UINavigationController *)setUpWith:(Class)class{
-    UIViewController *viewController = [[class alloc] init];
+- (UINavigationController *)setUpWith:(NSString *)class{
+    UIViewController *viewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:class];
     viewController.view.backgroundColor = [UIColor whiteColor];
     UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:viewController];
     return naviVC;
@@ -30,7 +30,7 @@
     
     NSMutableArray *array = [NSMutableArray array];
     for (int i = 0; i < classNames.count; i++) {
-        UINavigationController *naviVC = [self setUpWith:NSClassFromString(classNames[i])];
+        UINavigationController *naviVC = [self setUpWith:classNames[i]];
         naviVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:titleNames[i] image:[[UIImage imageNamed:imageName[i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]  selectedImage:[[UIImage imageNamed:[imageName[i] stringByAppendingString:@"2"]]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]] ;
         [naviVC setNavigationBarHidden:YES];
         [array addObject:naviVC];
