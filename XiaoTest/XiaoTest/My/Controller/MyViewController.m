@@ -7,7 +7,7 @@
 //
 
 #import "MyViewController.h"
-#import "SettingViewController.h"
+#import "CertificateViewController.h"
 #import "MyCell.h"
 
 @interface MyViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -126,7 +126,7 @@
     return 5;
 }
 - (IBAction)pushSettingController {
-    SettingViewController *vc = [SBMain instantiateViewControllerWithIdentifier:@"SettingViewController"];
+    CertificateViewController *vc = [SBMain instantiateViewControllerWithIdentifier:@"CertificateViewController"];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }

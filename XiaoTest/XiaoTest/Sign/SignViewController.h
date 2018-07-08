@@ -10,4 +10,10 @@
 
 @interface SignViewController : BaseViewController
 
+
+/**
+ 是否是注册
+ */
+@property (assign, nonatomic) BOOL isRegist;
+
 @end

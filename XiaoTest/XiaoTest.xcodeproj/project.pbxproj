@@ -34,6 +34,11 @@
 		6454C7AB20CF8E4A00157BD4 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6454C7A020CF8E4A00157BD4 /* ViewController+MASAdditions.m */; };
 		646944E720D861D000A48C30 /* TradeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 646944E620D861D000A48C30 /* TradeViewCell.m */; };
 		646944EB20D8930B00A48C30 /* SignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 646944EA20D8930B00A48C30 /* SignViewController.m */; };
+		647E0B0E20F1441300DD9FDD /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E0B0D20F1441300DD9FDD /* UserModel.m */; };
+		647E0B1320F14B7600DD9FDD /* libCrawlerCloudSDK-2.2.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 647E0B1120F14B7500DD9FDD /* libCrawlerCloudSDK-2.2.6.a */; };
+		647E0B1620F151C100DD9FDD /* CertificateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E0B1520F151C100DD9FDD /* CertificateViewController.m */; };
+		647E0B1920F17FD400DD9FDD /* CertificateDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E0B1820F17FD400DD9FDD /* CertificateDetailViewController.m */; };
+		647E0B1C20F1817D00DD9FDD /* CetificateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E0B1B20F1817D00DD9FDD /* CetificateHeaderView.m */; };
 		64B2580F20D4C2B400EBEBDE /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B2580D20D4C2B400EBEBDE /* HomeViewCell.m */; };
 		64B2581020D4C2B400EBEBDE /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64B2580E20D4C2B400EBEBDE /* HomeViewCell.xib */; };
 		64B2581420D4C4FB00EBEBDE /* HomeFootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B2581220D4C4FB00EBEBDE /* HomeFootCell.m */; };
@@ -152,6 +157,17 @@
 		646944E620D861D000A48C30 /* TradeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TradeViewCell.m; sourceTree = "<group>"; };
 		646944E920D8930B00A48C30 /* SignViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignViewController.h; sourceTree = "<group>"; };
 		646944EA20D8930B00A48C30 /* SignViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignViewController.m; sourceTree = "<group>"; };
+		647E0B0C20F1441300DD9FDD /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		647E0B0D20F1441300DD9FDD /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		647E0B1020F14B7300DD9FDD /* BqsServiceId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BqsServiceId.h; sourceTree = "<group>"; };
+		647E0B1120F14B7500DD9FDD /* libCrawlerCloudSDK-2.2.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCrawlerCloudSDK-2.2.6.a"; sourceTree = "<group>"; };
+		647E0B1220F14B7500DD9FDD /* BqsCrawlerCloudSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BqsCrawlerCloudSDK.h; sourceTree = "<group>"; };
+		647E0B1420F151C100DD9FDD /* CertificateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CertificateViewController.h; sourceTree = "<group>"; };
+		647E0B1520F151C100DD9FDD /* CertificateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CertificateViewController.m; sourceTree = "<group>"; };
+		647E0B1720F17FD400DD9FDD /* CertificateDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CertificateDetailViewController.h; sourceTree = "<group>"; };
+		647E0B1820F17FD400DD9FDD /* CertificateDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CertificateDetailViewController.m; sourceTree = "<group>"; };
+		647E0B1A20F1817D00DD9FDD /* CetificateHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CetificateHeaderView.h; sourceTree = "<group>"; };
+		647E0B1B20F1817D00DD9FDD /* CetificateHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CetificateHeaderView.m; sourceTree = "<group>"; };
 		64B2580C20D4C2B400EBEBDE /* HomeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewCell.h; sourceTree = "<group>"; };
 		64B2580D20D4C2B400EBEBDE /* HomeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewCell.m; sourceTree = "<group>"; };
 		64B2580E20D4C2B400EBEBDE /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
@@ -236,6 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				647E0B1320F14B7600DD9FDD /* libCrawlerCloudSDK-2.2.6.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +438,10 @@
 			children = (
 				6454C78020CF853200157BD4 /* MyViewController.h */,
 				6454C78120CF853200157BD4 /* MyViewController.m */,
+				647E0B1420F151C100DD9FDD /* CertificateViewController.h */,
+				647E0B1520F151C100DD9FDD /* CertificateViewController.m */,
+				647E0B1720F17FD400DD9FDD /* CertificateDetailViewController.h */,
+				647E0B1820F17FD400DD9FDD /* CertificateDetailViewController.m */,
 				64D58FCF20E05DD100DFD982 /* SettingViewController.h */,
 				64D58FD020E05DD100DFD982 /* SettingViewController.m */,
 			);
@@ -432,6 +453,8 @@
 			children = (
 				64517A3F20D2215400D68860 /* MyCell.h */,
 				64517A4020D2215400D68860 /* MyCell.m */,
+				647E0B1A20F1817D00DD9FDD /* CetificateHeaderView.h */,
+				647E0B1B20F1817D00DD9FDD /* CetificateHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -446,6 +469,7 @@
 		6454C78320CF8E2600157BD4 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				647E0B0F20F14B3800DD9FDD /* BqsSdk */,
 				64D58FBA20DFFFB800DFD982 /* AFNetworking */,
 				64BAF27720D375580052C91F /* SDWebImage */,
 				64BAF26020D372490052C91F /* SDCycleScrollView */,
@@ -492,8 +516,20 @@
 			children = (
 				646944E920D8930B00A48C30 /* SignViewController.h */,
 				646944EA20D8930B00A48C30 /* SignViewController.m */,
+				647E0B0C20F1441300DD9FDD /* UserModel.h */,
+				647E0B0D20F1441300DD9FDD /* UserModel.m */,
 			);
 			path = Sign;
+			sourceTree = "<group>";
+		};
+		647E0B0F20F14B3800DD9FDD /* BqsSdk */ = {
+			isa = PBXGroup;
+			children = (
+				647E0B1220F14B7500DD9FDD /* BqsCrawlerCloudSDK.h */,
+				647E0B1020F14B7300DD9FDD /* BqsServiceId.h */,
+				647E0B1120F14B7500DD9FDD /* libCrawlerCloudSDK-2.2.6.a */,
+			);
+			path = BqsSdk;
 			sourceTree = "<group>";
 		};
 		64BAF26020D372490052C91F /* SDCycleScrollView */ = {
@@ -750,6 +786,7 @@
 				64BAF2A320D375580052C91F /* SDImageCacheConfig.m in Sources */,
 				64BAF27320D372490052C91F /* TAPageControl.m in Sources */,
 				64B2581820D4CD7600EBEBDE /* TradeHeaderView.m in Sources */,
+				647E0B1620F151C100DD9FDD /* CertificateViewController.m in Sources */,
 				64BAF2A420D375580052C91F /* SDWebImageCompat.m in Sources */,
 				64D58FCE20DFFFB800DFD982 /* AFURLSessionManager.m in Sources */,
 				6454C7AA20CF8E4A00157BD4 /* View+MASAdditions.m in Sources */,
@@ -771,6 +808,7 @@
 				64BAF2A820D375580052C91F /* SDWebImageManager.m in Sources */,
 				6454C76520CF830900157BD4 /* RootViewController.m in Sources */,
 				64BAF2AF20D375580052C91F /* UIView+WebCache.m in Sources */,
+				647E0B0E20F1441300DD9FDD /* UserModel.m in Sources */,
 				6454C76C20CF849C00157BD4 /* TabViewController.m in Sources */,
 				6454C77F20CF852800157BD4 /* TradeViewController.m in Sources */,
 				64BAF2A220D375580052C91F /* SDImageCache.m in Sources */,
@@ -784,6 +822,7 @@
 				64BAF2AA20D375580052C91F /* UIButton+WebCache.m in Sources */,
 				64D58FD420E0606700DFD982 /* NaviBarView.m in Sources */,
 				64B2581420D4C4FB00EBEBDE /* HomeFootCell.m in Sources */,
+				647E0B1C20F1817D00DD9FDD /* CetificateHeaderView.m in Sources */,
 				6454C7AB20CF8E4A00157BD4 /* ViewController+MASAdditions.m in Sources */,
 				64D58FCD20DFFFB800DFD982 /* AFURLResponseSerialization.m in Sources */,
 				6454C7A720CF8E4A00157BD4 /* MASViewConstraint.m in Sources */,
@@ -792,6 +831,7 @@
 				64D58FCB20DFFFB800DFD982 /* AFSecurityPolicy.m in Sources */,
 				64BAF2AD20D375580052C91F /* UIImageView+HighlightedWebCache.m in Sources */,
 				6454C7A620CF8E4A00157BD4 /* MASViewAttribute.m in Sources */,
+				647E0B1920F17FD400DD9FDD /* CertificateDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,6 +1000,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XiaoTest/PrefixHeader.pch";
 				INFOPLIST_FILE = XiaoTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XiaoTest/Source/BqsSdk",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = shuai.XiaoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -976,6 +1020,10 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XiaoTest/PrefixHeader.pch";
 				INFOPLIST_FILE = XiaoTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XiaoTest/Source/BqsSdk",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = shuai.XiaoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

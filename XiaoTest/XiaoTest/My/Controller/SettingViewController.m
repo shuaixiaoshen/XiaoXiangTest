@@ -7,8 +7,9 @@
 //
 
 #import "SettingViewController.h"
-
-@interface SettingViewController ()
+#import "BqsCrawlerCloudSDK.h"
+#import "BqsServiceId.h"
+@interface SettingViewController ()<BqsCrawlerCloudSDKDelegate>
 
 @end
 
@@ -16,8 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
+//    [BqsCrawlerCloudSDK shared].backIndicatorImage = [UIImage imageNamed:@""];
     // Do any additional setup after loading the view.
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

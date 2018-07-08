@@ -37,6 +37,7 @@
 
 - (void)common{
 //    self.backgroundColor = [UIColor whiteColor];
+    self.frame = CGRectMake(0, 0, KscreenWidth, 64);
     titleLab = [[UILabel alloc] initWithFrame:CGRectMake(KscreenWidth / 2 - KscreenWidth / 3 / 2, 34, KscreenWidth  / 3, 20)];
     titleLab.font = [UIFont boldSystemFontOfSize:18];
     titleLab.textColor = [UIColor darkTextColor];
@@ -44,10 +45,9 @@
     titleLab.adjustsFontSizeToFitWidth = YES;
     [self addSubview:titleLab];
     _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _backBtn.frame = CGRectMake(10, 20, 100, 40);
+    _backBtn.frame = CGRectMake(10, 34, 15, 20);
     _backBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-//    [_backBtn setImage:[UIImage imageNamed:@"back_arrow"] forState:UIControlStateNormal];
-    [_backBtn setTitle:@"<" forState:UIControlStateNormal];
+    [_backBtn setImage:[UIImage imageNamed:@"back_img"] forState:UIControlStateNormal];
     [_backBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_backBtn addTarget:self action:@selector(popToRootController) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_backBtn];

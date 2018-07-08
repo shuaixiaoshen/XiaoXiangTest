@@ -71,6 +71,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SignViewController *signVc = [[SignViewController alloc] init];
+    signVc.isRegist= NO;
     [self presentViewController:signVc animated:YES completion:nil];
 }
 #pragma mark - 按钮切换 -

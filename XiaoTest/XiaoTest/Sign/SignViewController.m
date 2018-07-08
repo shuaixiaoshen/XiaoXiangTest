@@ -19,6 +19,7 @@
 
 @implementation SignViewController{
     NSString *yzmToken;
+    UIButton *_getSmsBtn;
 }
 
 - (UIScrollView *)scrollView{
@@ -130,15 +131,15 @@
         make.left.mas_offset(@25);
         make.right.mas_offset(@-25);
     }];
-    UIButton *sendBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    sendBtn.backgroundColor = [UIColor colorWithRed:95 / 255.0 green:156 / 255.0 blue:249 / 255.0 alpha:1];
-    [sendBtn setTitle:@"获取" forState:UIControlStateNormal];
-    sendBtn.layer.cornerRadius = 15.0f;
-    sendBtn.layer.masksToBounds = YES;
-    sendBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-    [sendBtn addTarget:self action:@selector(handleSendCode) forControlEvents:UIControlEventTouchUpInside];
-    [passwordView addSubview:sendBtn];
-    [sendBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    _getSmsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _getSmsBtn.backgroundColor = [UIColor colorWithRed:95 / 255.0 green:156 / 255.0 blue:249 / 255.0 alpha:1];
+    [_getSmsBtn setTitle:@"获取" forState:UIControlStateNormal];
+    _getSmsBtn.layer.cornerRadius = 15.0f;
+    _getSmsBtn.layer.masksToBounds = YES;
+    _getSmsBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [_getSmsBtn addTarget:self action:@selector(handleSendCode) forControlEvents:UIControlEventTouchUpInside];
+    [passwordView addSubview:_getSmsBtn];
+    [_getSmsBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_offset(@0);
         make.bottom.mas_offset(@-15);
         make.height.mas_offset(@30);
@@ -150,7 +151,7 @@
     _passwordField.placeholder = @"请输入手机验证码";
     [_passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_offset(@0);
-        make.right.equalTo(sendBtn.mas_left).mas_offset(3);
+        make.right.equalTo(_getSmsBtn.mas_left).mas_offset(3);
         make.bottom.mas_offset(@0);
         make.height.mas_offset(@45);
     }];
@@ -164,7 +165,12 @@
     }];
     UIButton *fastBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     fastBtn.backgroundColor = [UIColor colorWithRed:95 / 255.0 green:156 / 255.0 blue:249 / 255.0 alpha:1];
-    [fastBtn setTitle:@"快速登录" forState:UIControlStateNormal];
+    if (_isRegist) {
+        [fastBtn setTitle:@"注册" forState:UIControlStateNormal];
+    }else{
+        [fastBtn setTitle:@"快速登录" forState:UIControlStateNormal];
+    }
+    
     fastBtn.layer.cornerRadius = 18.0f;
     fastBtn.layer.masksToBounds = YES;
     fastBtn.titleLabel.font = [UIFont systemFontOfSize:14];
@@ -190,7 +196,12 @@
     UILabel *signLab = [[UILabel alloc] init];
     [bottomView addSubview:signLab];
     signLab.textColor = [UIColor grayColor];
-    signLab.text = @"登陆即同意";
+    if (_isRegist) {
+       signLab.text = @"注册即同意";
+    }else{
+        signLab.text = @"登陆即同意";
+    }
+    
     signLab.font = [UIFont boldSystemFontOfSize:13];
     [signLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(bottomView).mas_offset(-30);
@@ -212,8 +223,15 @@
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setValue:_moblieField.text forKey:@"phone"];
     [dic setValue:[NSString stringWithFormat:@"%@%@%@",[self getRandomStringWithNum:6],NSUserDefaultsGet(Session_token),[self getRandomStringWithNum:6]] forKey:@"token"];
-    [self postWithURLString:[NSString stringWithFormat:@"%@/custom/sendRegistCode",KBaseUrl] parameters:dic success:^(id _Nullable data) {
+    NSString *requestUrl;
+    if (_isRegist) {
+        requestUrl = [NSString stringWithFormat:@"%@/custom/sendRegistCode",KBaseUrl];
+    }else{
+        requestUrl = [NSString stringWithFormat:@"%@/custom/sendLoginCode",KBaseUrl];
+    }
+    [self postWithURLString:requestUrl parameters:dic success:^(id _Nullable data) {
         NSLog(@"%@",data);
+        [self gcdStartTimer];
         yzmToken = [data valueForKey:@"data"];
     } failure:^(NSString * _Nullable error) {
         NSLog(@"%@",error);
@@ -225,11 +243,50 @@
     [dic setValue:_moblieField.text forKey:@"phone"];
     [dic setValue:yzmToken forKey:@"yzmToken"];
     [dic setValue:_passwordField.text forKey:@"yzmCode"];
-    [self postWithURLString:[NSString stringWithFormat:@"%@/custom/register",KBaseUrl] parameters:dic success:^(id _Nullable data) {
+    NSString *requestUrl;
+    if (_isRegist) {
+        requestUrl = [NSString stringWithFormat:@"%@/custom/regist",KBaseUrl];
+    }else{
+        requestUrl = [NSString stringWithFormat:@"%@/custom/login",KBaseUrl];
+    }
+
+    [self postWithURLString:requestUrl parameters:dic success:^(id _Nullable data) {
         NSLog(@"%@",data);
+        NSDictionary *dataDic = data[@"data"];
+        UserModel *model = [UserModel defaultModel];
+        model.seesionToken = dataDic[@"token"];
+        [self dismissViewControllerAnimated:YES completion:nil];
     } failure:^(NSString * _Nullable error) {
         NSLog(@"%@",error);
     }];
+}
+
+/*
+ * 利用GCD计时
+ */
+- (void)gcdStartTimer{
+    __block int timeout= 60; //倒计时时间
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
+    dispatch_source_set_event_handler(_timer, ^{
+        if(timeout<=0){ //倒计时结束，关闭
+            dispatch_source_cancel(_timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //设置界面的按钮显示 根据自己需求设置
+                [_getSmsBtn setTitle:@"获取" forState:UIControlStateNormal];
+                _getSmsBtn.enabled = YES;
+            });
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //设置界面的按钮显示 根据自己需求设置
+                [_getSmsBtn  setTitle:[NSString stringWithFormat:@"%d s",timeout] forState:UIControlStateNormal];
+                _getSmsBtn.enabled = NO;
+            });
+            timeout--;
+        }
+    });
+    dispatch_resume(_timer);
 }
 
 /**
