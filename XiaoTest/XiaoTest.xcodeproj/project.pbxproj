@@ -18,7 +18,6 @@
 		6454C76520CF830900157BD4 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6454C76420CF830900157BD4 /* RootViewController.m */; };
 		6454C76920CF844E00157BD4 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6454C76820CF844E00157BD4 /* BaseViewController.m */; };
 		6454C76C20CF849C00157BD4 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6454C76B20CF849C00157BD4 /* TabViewController.m */; };
-		6454C77C20CF851E00157BD4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6454C77B20CF851E00157BD4 /* HomeViewController.m */; };
 		6454C77F20CF852800157BD4 /* TradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6454C77E20CF852800157BD4 /* TradeViewController.m */; };
 		6454C78220CF853200157BD4 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6454C78120CF853200157BD4 /* MyViewController.m */; };
 		6454C7A120CF8E4A00157BD4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6454C78720CF8E4A00157BD4 /* Info.plist */; };
@@ -39,10 +38,18 @@
 		647E0B1620F151C100DD9FDD /* CertificateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E0B1520F151C100DD9FDD /* CertificateViewController.m */; };
 		647E0B1920F17FD400DD9FDD /* CertificateDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E0B1820F17FD400DD9FDD /* CertificateDetailViewController.m */; };
 		647E0B1C20F1817D00DD9FDD /* CetificateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E0B1B20F1817D00DD9FDD /* CetificateHeaderView.m */; };
-		64B2580F20D4C2B400EBEBDE /* HomeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B2580D20D4C2B400EBEBDE /* HomeViewCell.m */; };
-		64B2581020D4C2B400EBEBDE /* HomeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64B2580E20D4C2B400EBEBDE /* HomeViewCell.xib */; };
-		64B2581420D4C4FB00EBEBDE /* HomeFootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B2581220D4C4FB00EBEBDE /* HomeFootCell.m */; };
-		64B2581520D4C4FB00EBEBDE /* HomeFootCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64B2581320D4C4FB00EBEBDE /* HomeFootCell.xib */; };
+		647E0B1F20F1B0AF00DD9FDD /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 647E0B1E20F1B0AF00DD9FDD /* CardView.m */; };
+		64AC462020F4641D0045BB65 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AC461F20F4641D0045BB65 /* HomeViewController.m */; };
+		64AC462420F467000045BB65 /* HeaderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AC462220F467000045BB65 /* HeaderViewCell.m */; };
+		64AC462520F467000045BB65 /* HeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64AC462320F467000045BB65 /* HeaderViewCell.xib */; };
+		64AC462920F4673A0045BB65 /* HomeFistrCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AC462720F4673A0045BB65 /* HomeFistrCell.m */; };
+		64AC462A20F4673A0045BB65 /* HomeFistrCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64AC462820F4673A0045BB65 /* HomeFistrCell.xib */; };
+		64AC462E20F467490045BB65 /* HomeSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AC462C20F467490045BB65 /* HomeSecondCell.m */; };
+		64AC462F20F467490045BB65 /* HomeSecondCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64AC462D20F467490045BB65 /* HomeSecondCell.xib */; };
+		64AC463320F4675D0045BB65 /* HomeThirdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AC463120F4675D0045BB65 /* HomeThirdCell.m */; };
+		64AC463420F4675D0045BB65 /* HomeThirdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64AC463220F4675D0045BB65 /* HomeThirdCell.xib */; };
+		64AC463820F472E80045BB65 /* HomeSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64AC463620F472E80045BB65 /* HomeSearchCell.m */; };
+		64AC463920F472E80045BB65 /* HomeSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64AC463720F472E80045BB65 /* HomeSearchCell.xib */; };
 		64B2581820D4CD7600EBEBDE /* TradeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64B2581720D4CD7600EBEBDE /* TradeHeaderView.m */; };
 		64BAF27020D372490052C91F /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAF26320D372490052C91F /* TAAbstractDotView.m */; };
 		64BAF27120D372490052C91F /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAF26520D372490052C91F /* TAAnimatedDotView.m */; };
@@ -121,8 +128,6 @@
 		6454C76820CF844E00157BD4 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		6454C76A20CF849C00157BD4 /* TabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
 		6454C76B20CF849C00157BD4 /* TabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
-		6454C77A20CF851E00157BD4 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		6454C77B20CF851E00157BD4 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		6454C77D20CF852800157BD4 /* TradeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TradeViewController.h; sourceTree = "<group>"; };
 		6454C77E20CF852800157BD4 /* TradeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TradeViewController.m; sourceTree = "<group>"; };
 		6454C78020CF853200157BD4 /* MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
@@ -168,12 +173,25 @@
 		647E0B1820F17FD400DD9FDD /* CertificateDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CertificateDetailViewController.m; sourceTree = "<group>"; };
 		647E0B1A20F1817D00DD9FDD /* CetificateHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CetificateHeaderView.h; sourceTree = "<group>"; };
 		647E0B1B20F1817D00DD9FDD /* CetificateHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CetificateHeaderView.m; sourceTree = "<group>"; };
-		64B2580C20D4C2B400EBEBDE /* HomeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewCell.h; sourceTree = "<group>"; };
-		64B2580D20D4C2B400EBEBDE /* HomeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewCell.m; sourceTree = "<group>"; };
-		64B2580E20D4C2B400EBEBDE /* HomeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewCell.xib; sourceTree = "<group>"; };
-		64B2581120D4C4FB00EBEBDE /* HomeFootCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFootCell.h; sourceTree = "<group>"; };
-		64B2581220D4C4FB00EBEBDE /* HomeFootCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFootCell.m; sourceTree = "<group>"; };
-		64B2581320D4C4FB00EBEBDE /* HomeFootCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFootCell.xib; sourceTree = "<group>"; };
+		647E0B1D20F1B0AF00DD9FDD /* CardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
+		647E0B1E20F1B0AF00DD9FDD /* CardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		64AC461E20F4641D0045BB65 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		64AC461F20F4641D0045BB65 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		64AC462120F467000045BB65 /* HeaderViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderViewCell.h; sourceTree = "<group>"; };
+		64AC462220F467000045BB65 /* HeaderViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderViewCell.m; sourceTree = "<group>"; };
+		64AC462320F467000045BB65 /* HeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderViewCell.xib; sourceTree = "<group>"; };
+		64AC462620F4673A0045BB65 /* HomeFistrCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFistrCell.h; sourceTree = "<group>"; };
+		64AC462720F4673A0045BB65 /* HomeFistrCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFistrCell.m; sourceTree = "<group>"; };
+		64AC462820F4673A0045BB65 /* HomeFistrCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFistrCell.xib; sourceTree = "<group>"; };
+		64AC462B20F467490045BB65 /* HomeSecondCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeSecondCell.h; sourceTree = "<group>"; };
+		64AC462C20F467490045BB65 /* HomeSecondCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSecondCell.m; sourceTree = "<group>"; };
+		64AC462D20F467490045BB65 /* HomeSecondCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSecondCell.xib; sourceTree = "<group>"; };
+		64AC463020F4675D0045BB65 /* HomeThirdCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeThirdCell.h; sourceTree = "<group>"; };
+		64AC463120F4675D0045BB65 /* HomeThirdCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeThirdCell.m; sourceTree = "<group>"; };
+		64AC463220F4675D0045BB65 /* HomeThirdCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeThirdCell.xib; sourceTree = "<group>"; };
+		64AC463520F472E80045BB65 /* HomeSearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeSearchCell.h; sourceTree = "<group>"; };
+		64AC463620F472E80045BB65 /* HomeSearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeSearchCell.m; sourceTree = "<group>"; };
+		64AC463720F472E80045BB65 /* HomeSearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSearchCell.xib; sourceTree = "<group>"; };
 		64B2581620D4CD7600EBEBDE /* TradeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TradeHeaderView.h; sourceTree = "<group>"; };
 		64B2581720D4CD7600EBEBDE /* TradeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TradeHeaderView.m; sourceTree = "<group>"; };
 		64BAF26220D372490052C91F /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
@@ -380,8 +398,8 @@
 		6454C77120CF84DB00157BD4 /* Controler */ = {
 			isa = PBXGroup;
 			children = (
-				6454C77A20CF851E00157BD4 /* HomeViewController.h */,
-				6454C77B20CF851E00157BD4 /* HomeViewController.m */,
+				64AC461E20F4641D0045BB65 /* HomeViewController.h */,
+				64AC461F20F4641D0045BB65 /* HomeViewController.m */,
 			);
 			path = Controler;
 			sourceTree = "<group>";
@@ -389,12 +407,21 @@
 		6454C77220CF84E200157BD4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				64B2580C20D4C2B400EBEBDE /* HomeViewCell.h */,
-				64B2580D20D4C2B400EBEBDE /* HomeViewCell.m */,
-				64B2580E20D4C2B400EBEBDE /* HomeViewCell.xib */,
-				64B2581120D4C4FB00EBEBDE /* HomeFootCell.h */,
-				64B2581220D4C4FB00EBEBDE /* HomeFootCell.m */,
-				64B2581320D4C4FB00EBEBDE /* HomeFootCell.xib */,
+				64AC462120F467000045BB65 /* HeaderViewCell.h */,
+				64AC462220F467000045BB65 /* HeaderViewCell.m */,
+				64AC462320F467000045BB65 /* HeaderViewCell.xib */,
+				64AC462620F4673A0045BB65 /* HomeFistrCell.h */,
+				64AC462720F4673A0045BB65 /* HomeFistrCell.m */,
+				64AC462820F4673A0045BB65 /* HomeFistrCell.xib */,
+				64AC462B20F467490045BB65 /* HomeSecondCell.h */,
+				64AC462C20F467490045BB65 /* HomeSecondCell.m */,
+				64AC462D20F467490045BB65 /* HomeSecondCell.xib */,
+				64AC463020F4675D0045BB65 /* HomeThirdCell.h */,
+				64AC463120F4675D0045BB65 /* HomeThirdCell.m */,
+				64AC463220F4675D0045BB65 /* HomeThirdCell.xib */,
+				64AC463520F472E80045BB65 /* HomeSearchCell.h */,
+				64AC463620F472E80045BB65 /* HomeSearchCell.m */,
+				64AC463720F472E80045BB65 /* HomeSearchCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -455,6 +482,8 @@
 				64517A4020D2215400D68860 /* MyCell.m */,
 				647E0B1A20F1817D00DD9FDD /* CetificateHeaderView.h */,
 				647E0B1B20F1817D00DD9FDD /* CetificateHeaderView.m */,
+				647E0B1D20F1B0AF00DD9FDD /* CardView.h */,
+				647E0B1E20F1B0AF00DD9FDD /* CardView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -740,14 +769,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64AC463420F4675D0045BB65 /* HomeThirdCell.xib in Resources */,
 				64BAF29F20D375580052C91F /* README.md in Resources */,
 				6454C7A120CF8E4A00157BD4 /* Info.plist in Resources */,
-				64B2581520D4C4FB00EBEBDE /* HomeFootCell.xib in Resources */,
-				64B2581020D4C2B400EBEBDE /* HomeViewCell.xib in Resources */,
 				6436F80A20CE35490045FDE0 /* LaunchScreen.storyboard in Resources */,
+				64AC462F20F467490045BB65 /* HomeSecondCell.xib in Resources */,
+				64AC462A20F4673A0045BB65 /* HomeFistrCell.xib in Resources */,
 				6436F80720CE35490045FDE0 /* Assets.xcassets in Resources */,
 				6436F80520CE35490045FDE0 /* Main.storyboard in Resources */,
+				64AC463920F472E80045BB65 /* HomeSearchCell.xib in Resources */,
 				64BAF29E20D375580052C91F /* LICENSE in Resources */,
+				64AC462520F467000045BB65 /* HeaderViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,10 +809,12 @@
 				64BAF2A120D375580052C91F /* NSImage+WebCache.m in Sources */,
 				646944EB20D8930B00A48C30 /* SignViewController.m in Sources */,
 				6454C76920CF844E00157BD4 /* BaseViewController.m in Sources */,
+				64AC463320F4675D0045BB65 /* HomeThirdCell.m in Sources */,
 				64BAF2B020D375580052C91F /* UIView+WebCacheOperation.m in Sources */,
 				6454C7A820CF8E4A00157BD4 /* NSArray+MASAdditions.m in Sources */,
 				6454C78220CF853200157BD4 /* MyViewController.m in Sources */,
 				64BAF27620D372490052C91F /* UIView+SDExtension.m in Sources */,
+				64AC463820F472E80045BB65 /* HomeSearchCell.m in Sources */,
 				6436F7FF20CE35490045FDE0 /* AppDelegate.m in Sources */,
 				64D58FCC20DFFFB800DFD982 /* AFURLRequestSerialization.m in Sources */,
 				64BAF2A320D375580052C91F /* SDImageCacheConfig.m in Sources */,
@@ -791,23 +825,26 @@
 				64D58FCE20DFFFB800DFD982 /* AFURLSessionManager.m in Sources */,
 				6454C7AA20CF8E4A00157BD4 /* View+MASAdditions.m in Sources */,
 				64BAF2A920D375580052C91F /* SDWebImagePrefetcher.m in Sources */,
+				64AC462920F4673A0045BB65 /* HomeFistrCell.m in Sources */,
 				64BAF2A720D375580052C91F /* SDWebImageDownloaderOperation.m in Sources */,
 				6454C7A520CF8E4A00157BD4 /* MASLayoutConstraint.m in Sources */,
 				64BAF2A620D375580052C91F /* SDWebImageDownloader.m in Sources */,
 				6454C7A320CF8E4A00157BD4 /* MASConstraint.m in Sources */,
+				64AC462020F4641D0045BB65 /* HomeViewController.m in Sources */,
 				6454C7A920CF8E4A00157BD4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				6454C7A220CF8E4A00157BD4 /* MASCompositeConstraint.m in Sources */,
 				646944E720D861D000A48C30 /* TradeViewCell.m in Sources */,
 				64BAF27120D372490052C91F /* TAAnimatedDotView.m in Sources */,
 				64BAF2A520D375580052C91F /* SDWebImageDecoder.m in Sources */,
 				64BAF27220D372490052C91F /* TADotView.m in Sources */,
-				64B2580F20D4C2B400EBEBDE /* HomeViewCell.m in Sources */,
 				64BAF27020D372490052C91F /* TAAbstractDotView.m in Sources */,
 				64D58FCA20DFFFB800DFD982 /* AFNetworkReachabilityManager.m in Sources */,
 				64D58FD120E05DD100DFD982 /* SettingViewController.m in Sources */,
+				64AC462E20F467490045BB65 /* HomeSecondCell.m in Sources */,
 				64BAF2A820D375580052C91F /* SDWebImageManager.m in Sources */,
 				6454C76520CF830900157BD4 /* RootViewController.m in Sources */,
 				64BAF2AF20D375580052C91F /* UIView+WebCache.m in Sources */,
+				647E0B1F20F1B0AF00DD9FDD /* CardView.m in Sources */,
 				647E0B0E20F1441300DD9FDD /* UserModel.m in Sources */,
 				6454C76C20CF849C00157BD4 /* TabViewController.m in Sources */,
 				6454C77F20CF852800157BD4 /* TradeViewController.m in Sources */,
@@ -821,13 +858,12 @@
 				64BAF2AC20D375580052C91F /* UIImage+MultiFormat.m in Sources */,
 				64BAF2AA20D375580052C91F /* UIButton+WebCache.m in Sources */,
 				64D58FD420E0606700DFD982 /* NaviBarView.m in Sources */,
-				64B2581420D4C4FB00EBEBDE /* HomeFootCell.m in Sources */,
 				647E0B1C20F1817D00DD9FDD /* CetificateHeaderView.m in Sources */,
 				6454C7AB20CF8E4A00157BD4 /* ViewController+MASAdditions.m in Sources */,
 				64D58FCD20DFFFB800DFD982 /* AFURLResponseSerialization.m in Sources */,
 				6454C7A720CF8E4A00157BD4 /* MASViewConstraint.m in Sources */,
-				6454C77C20CF851E00157BD4 /* HomeViewController.m in Sources */,
 				64517A4120D2215400D68860 /* MyCell.m in Sources */,
+				64AC462420F467000045BB65 /* HeaderViewCell.m in Sources */,
 				64D58FCB20DFFFB800DFD982 /* AFSecurityPolicy.m in Sources */,
 				64BAF2AD20D375580052C91F /* UIImageView+HighlightedWebCache.m in Sources */,
 				6454C7A620CF8E4A00157BD4 /* MASViewAttribute.m in Sources */,

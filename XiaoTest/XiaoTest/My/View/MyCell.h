@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface MyCell : UITableViewCell
 
 - (void)configureModelWithimgArr:(NSArray *)imgArr

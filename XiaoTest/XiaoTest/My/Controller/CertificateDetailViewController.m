@@ -8,6 +8,7 @@
 
 #import "CertificateDetailViewController.h"
 #import "CetificateHeaderView.h"
+#import "CardView.h"
 #import "BqsServiceId.h"
 #import "BqsCrawlerCloudSDK.h"
 
@@ -31,10 +32,16 @@
     CetificateHeaderView *headerView = [CetificateHeaderView cetiAddSubView:self.view];
     headerView.sourceType = _sourceType;
     [headerView startSetUp];
-    if (_sourceType > 1) {
+    if (_sourceType == 0) {
+        CardView *cardView = [CardView cardAddSubView:self.view];
+        cardView.frame = CGRectMake(0, 134, CGRectGetWidth(self.view.frame), KscreenHeight - CGRectGetMaxY(headerView.frame));
+        [cardView startSetUp];
+    }else if (_sourceType == 1){
+        
+    }else{
         //注册白骑士
         [self setUpWith:headerView];
-      [self registBqsSdk];
+        [self registBqsSdk];
     }
     // Do any additional setup after loading the view.
 }

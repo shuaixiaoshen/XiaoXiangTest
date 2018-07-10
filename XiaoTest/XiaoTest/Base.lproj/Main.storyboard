@@ -17,12 +17,119 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R5a-Bx-XJM" customClass="NaviBarView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbS-nv-A4M">
+                                        <rect key="frame" x="130.5" y="32" width="54" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="eKN-l3-91g"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="租赁">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="handleTouchHeader1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kc7-WN-Ltj"/>
+                                            <action selector="handleTouchHeaderBtn:" destination="O5E-W1-JWg" eventType="touchUpInside" id="6ZC-N5-QTU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYM-zq-aTG">
+                                        <rect key="frame" x="190.5" y="32" width="54" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="rns-kg-ZVr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="二手审核">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="handleTouchHeader2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ul7-52-jB3"/>
+                                            <action selector="handleTouchHeaderBtn:" destination="O5E-W1-JWg" eventType="touchUpInside" id="XgZ-j0-yGV"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvV-DC-s6V">
+                                        <rect key="frame" x="152.5" y="57" width="10" height="3"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="JmE-MQ-6MP"/>
+                                            <constraint firstAttribute="width" constant="10" id="lO3-gl-iZH"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vne-gb-Oum">
+                                        <rect key="frame" x="336" y="33" width="24" height="24"/>
+                                        <state key="normal" image="my_20"/>
+                                        <connections>
+                                            <action selector="traerChat:" destination="O5E-W1-JWg" eventType="touchUpInside" id="O9e-ao-WLp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vne-gb-Oum" secondAttribute="trailing" constant="15" id="3EI-dx-HjQ"/>
+                                    <constraint firstItem="vne-gb-Oum" firstAttribute="centerY" secondItem="UbS-nv-A4M" secondAttribute="centerY" id="69l-oc-8D3"/>
+                                    <constraint firstAttribute="height" constant="64" id="EpF-cK-7fB"/>
+                                    <constraint firstItem="UbS-nv-A4M" firstAttribute="centerX" secondItem="R5a-Bx-XJM" secondAttribute="centerX" constant="-30" id="LDW-P1-dRq"/>
+                                    <constraint firstAttribute="bottom" secondItem="UYM-zq-aTG" secondAttribute="bottom" constant="7" id="LW6-ud-viC"/>
+                                    <constraint firstAttribute="bottom" secondItem="UbS-nv-A4M" secondAttribute="bottom" constant="7" id="bQn-2u-BUB"/>
+                                    <constraint firstItem="bvV-DC-s6V" firstAttribute="centerX" secondItem="R5a-Bx-XJM" secondAttribute="centerX" constant="-30" id="e7y-SB-INs"/>
+                                    <constraint firstItem="bvV-DC-s6V" firstAttribute="top" secondItem="UbS-nv-A4M" secondAttribute="bottom" id="fTS-nf-shd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="pFU-mq-Wih"/>
+                                    <constraint firstItem="UYM-zq-aTG" firstAttribute="centerX" secondItem="R5a-Bx-XJM" secondAttribute="centerX" constant="30" id="uO6-lf-UXq"/>
+                                    <constraint firstItem="UYM-zq-aTG" firstAttribute="width" secondItem="UbS-nv-A4M" secondAttribute="width" id="uee-e0-wrc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="self.isHidden" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="W7I-oN-6NB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8z2-IY-7gx">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="VHb-0c-zcG">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ktT-so-SwG"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="MMJ-by-g6a"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="W7I-oN-6NB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mv9-r3-Zhz"/>
+                            <constraint firstItem="W7I-oN-6NB" firstAttribute="top" secondItem="R5a-Bx-XJM" secondAttribute="bottom" id="S9O-Pt-wIE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R5a-Bx-XJM" secondAttribute="trailing" id="UKu-QH-5wH"/>
+                            <constraint firstItem="R5a-Bx-XJM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZY9-8D-D3T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W7I-oN-6NB" secondAttribute="trailing" id="fie-r9-c68"/>
+                            <constraint firstItem="R5a-Bx-XJM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="raN-bu-3Lk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="W7I-oN-6NB" secondAttribute="bottom" id="yCH-cm-Nnp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="W7I-oN-6NB" id="qaS-5u-XAi"/>
+                        <outlet property="header1Btn" destination="UbS-nv-A4M" id="liQ-zL-bfW"/>
+                        <outlet property="header2Btn" destination="UYM-zq-aTG" id="Vgr-Bi-Gql"/>
+                        <outlet property="headerLine" destination="bvV-DC-s6V" id="N2S-mu-b5e"/>
+                        <outlet property="lineX" destination="e7y-SB-INs" id="Coz-4p-bBf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="700" y="32.833583208395808"/>
         </scene>
         <!--Trade View Controller-->
         <scene sceneID="IgS-aq-zNo">
@@ -242,6 +349,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="my_20" width="24" height="24"/>
         <image name="my_24" width="24" height="24"/>
         <image name="trade_chat" width="25" height="25"/>
     </resources>

@@ -2,159 +2,163 @@
 //  HomeViewController.m
 //  XiaoTest
 //
-//  Cr/Users/shen/Downloads/SDCycleScrollView-master/Pods/SDWebImageeated by shen on 2018/6/11.
+//  Created by shen on 2018/7/9.
 //  Copyright © 2018年 shen. All rights reserved.
 //
 
 #import "HomeViewController.h"
-#import "SDCycleScrollView.h"
-#import "HomeViewCell.h"
-#import "HomeFootCell.h"
+#import "HeaderViewCell.h"
+#import "HomeFistrCell.h"
+#import "HomeSecondCell.h"
+#import "HomeThirdCell.h"
+#import "HomeSearchCell.h"
 
-@interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
+typedef NS_ENUM(NSInteger, UICollectionViewState) {
+    UICollectionViewStateFirst,
+    UICollectionViewStateSecond
+};
 
-@property (strong, nonatomic) UITableView *tableView;
+@interface HomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UIButton *header1Btn;
+@property (weak, nonatomic) IBOutlet UIButton *header2Btn;
+@property (weak, nonatomic) IBOutlet UIView *headerLine;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *lineX;
 
 @end
 
-@implementation HomeViewController
+@implementation HomeViewController{
+    UICollectionViewState collectionState;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getToken];
-    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    [self.view addSubview:_tableView];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    _tableView.sectionFooterHeight = 0.0f;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    [_tableView registerNib:[UINib nibWithNibName:@"HomeViewCell" bundle:nil] forCellReuseIdentifier:@"HomeViewCell"];
-    [_tableView registerNib:[UINib nibWithNibName:@"HomeFootCell" bundle:nil] forCellReuseIdentifier:@"HomeFootCell"];
-    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_offset(@0);
-        make.left.mas_offset(@0);
-        make.right.mas_offset(@0);
-        make.bottom.mas_offset(@0);
-    }];
+    collectionState = UICollectionViewStateFirst;
+    [_collectionView registerNib:[UINib nibWithNibName:@"HomeThirdCell" bundle:nil] forCellWithReuseIdentifier:@"HomeThirdCell"];
+    [_collectionView registerNib:[UINib nibWithNibName:@"HomeSecondCell" bundle:nil] forCellWithReuseIdentifier:@"HomeSecondCell"];
+    [_collectionView registerNib:[UINib nibWithNibName:@"HomeFistrCell" bundle:nil] forCellWithReuseIdentifier:@"HomeFistrCell"];
+    [_collectionView registerNib:[UINib nibWithNibName:@"HeaderViewCell" bundle:nil] forCellWithReuseIdentifier:@"HeaderViewCell"];
+    [_collectionView registerNib:[UINib nibWithNibName:@"HomeSearchCell" bundle:nil] forCellWithReuseIdentifier:@"HomeSearchCell"];
     // Do any additional setup after loading the view.
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+
+#pragma mark - UICollectionViewDelegate,Datasource -
+//一共有多少个组
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    if (collectionState == UICollectionViewStateFirst) {
+       return 5;
+    }
+    return 5;
+   
 }
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+//每一组有多少个cell
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    if (collectionState == UICollectionViewStateFirst) {
+        if (section == 0 || section == 1 || section == 2) {
+            return 1;
+        }
+        return 2;
+    }
+    if (section == 0 || section == 1) {
+        return 1;
+    }
     return 2;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        return 190;
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (collectionState == UICollectionViewStateFirst) {
+        if (indexPath.section == 0) {
+            HeaderViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HeaderViewCell" forIndexPath:indexPath];
+            return cell;
+        }else if (indexPath.section == 1){
+            HomeFistrCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeFistrCell" forIndexPath:indexPath];
+            return cell;
+        }else if (indexPath.section == 2){
+            HomeSecondCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeSecondCell" forIndexPath:indexPath];
+            return cell;
+        }else{
+            HomeThirdCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeThirdCell" forIndexPath:indexPath];
+            return cell;
+        }
     }
-    return 160;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        HomeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeViewCell"];
+        HeaderViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HeaderViewCell" forIndexPath:indexPath];
+        return cell;
+    }else if (indexPath.section == 1){
+        HomeSearchCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeSearchCell" forIndexPath:indexPath];
+        return cell;
+    }else{
+        HomeThirdCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeThirdCell" forIndexPath:indexPath];
         return cell;
     }
-    HomeFootCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFootCell"];
-    return cell;
     
 }
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
-        UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 250)];
-        SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 200) shouldInfiniteLoop:YES imageNamesGroup:@[@"banner1"]];
-        cycleScrollView.delegate = self;
-        cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
-        [headerView addSubview:cycleScrollView];
-        [self addCycleFootViewWith:headerView cycleView:cycleScrollView];
-        return headerView;
-    }
-    return [[UIView alloc] init];
-}
 
-- (void)addCycleFootViewWith:(UIView *)headerView cycleView:(SDCycleScrollView *)cycleScrollView{
-    UIView *footView = [[UIView alloc] init];
-    footView.backgroundColor = [UIColor whiteColor];
-    [headerView addSubview:footView];
-    [footView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.mas_offset(@0);
-        make.top.equalTo(cycleScrollView.mas_bottom).mas_offset(@0);
-        make.bottom.mas_offset(@0);
-    }];
-    [self addFootViewWithLeftOrRight:YES andView:footView];
-    [self addFootViewWithLeftOrRight:NO andView:footView];
-    UILabel *lineLab = [[UILabel alloc] init];
-    lineLab.backgroundColor = [UIColor blackColor];
-    [footView addSubview:lineLab];
-    [lineLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(footView);
-        make.width.mas_offset(@1);
-        make.top.mas_offset(@10);
-        make.bottom.mas_offset(@-10);
-    }];
-}
-
-- (void)addFootViewWithLeftOrRight:(BOOL)isLeft andView:(UIView *)footView{
-    UIView *detailView = [[UIView alloc] init];
-    [footView addSubview:detailView];
-    if (isLeft) {
-        detailView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame) / 2, 60);
-    }else{
-        detailView.frame = CGRectMake(CGRectGetMidX(self.view.frame), 0, CGRectGetWidth(self.view.frame) / 2, 60);
-    }
-    UIImageView *activeImg = [[UIImageView alloc] init];
-    [detailView addSubview:activeImg];
-    activeImg.contentMode = UIViewContentModeCenter;
-    [activeImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (isLeft) {
-            make.centerX.equalTo(detailView).mas_offset(@-20);
+//每一个分组的上左下右间距
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    if (collectionState == UICollectionViewStateFirst) {
+        if (section == 0) {
+            return UIEdgeInsetsMake(0, 0, 0, 0);
+        }else if (section == 1){
+            return UIEdgeInsetsMake(15, 0, 0, 0);
+        }else if (section == 2){
+            return UIEdgeInsetsMake(15, 0, 0, 0);
         }else{
-            make.centerX.equalTo(detailView).mas_offset(@-50);
+            return UIEdgeInsetsMake(15, 20, 15, 20);
         }
-        make.centerY.equalTo(detailView);
-        make.width.height.mas_offset(@50);
-    }];
-    UILabel *nameLab = [[UILabel alloc] initWithFrame:CGRectZero];
-    nameLab.textAlignment = NSTextAlignmentCenter;
-    nameLab.font = [UIFont systemFontOfSize:13];
-    nameLab.textColor = [UIColor blackColor];
-    [detailView addSubview:nameLab];
-    [nameLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_offset(@10);
-        make.left.equalTo(activeImg.mas_right).mas_offset(10);
-//        make.right.mas_offset(-3);
-        make.width.mas_offset(@60);
-    }];
-    UILabel *detailLab = [[UILabel alloc] initWithFrame:CGRectZero];
-    detailLab.textAlignment = NSTextAlignmentCenter;
-    detailLab.font = [UIFont systemFontOfSize:13];
-    detailLab.textColor = [UIColor blackColor];
-    [detailView addSubview:detailLab];
-    [detailLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_offset(@-10);
-        make.centerX.equalTo(nameLab);
-    }];
-    if (isLeft) {
-        activeImg.image = [UIImage imageNamed:@"index-ico_05"];
-        nameLab.text = @"每期租金";
-        detailLab.text = @"¥550.00";
+    }
+    if (section == 0) {
+        return UIEdgeInsetsMake(0, 0, 0, 0);
+    }else if (section == 1){
+        return UIEdgeInsetsMake(15, 0, 0, 0);
     }else{
-        activeImg.image = [UIImage imageNamed:@"index-ico_07"];
-        nameLab.text = @"逾期费率";
-        detailLab.text = @"3%";
+        return UIEdgeInsetsMake(15, 20, 15, 20);
+    }
+}
+//定义每一个cell的大小
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (collectionState == UICollectionViewStateFirst) {
+        if (indexPath.section == 0) {
+            return CGSizeMake(KscreenWidth, 215);
+        }else if (indexPath.section == 1){
+            return CGSizeMake(KscreenWidth, 175);
+        }else if (indexPath.section == 2){
+            return CGSizeMake(KscreenWidth, 120);
+        }else{
+            return CGSizeMake((KscreenWidth - 70) / 2, 177);
+        }
+    }
+    if (indexPath.section == 0) {
+        return CGSizeMake(KscreenWidth, 215);
+    }else if (indexPath.section == 1){
+        return CGSizeMake(KscreenWidth, 30);
+    }else{
+        return CGSizeMake((KscreenWidth - 70) / 2, 177);
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
-        return 260;
-    }
-    return 0;
+
+- (IBAction)handleTouchHeader1:(UIButton *)sender {
+    [_header1Btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_header2Btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    _lineX.constant = -30.0f;
+    [self.view updateConstraintsIfNeeded];
+    collectionState = UICollectionViewStateFirst;
+    [self.collectionView reloadData];
 }
+- (IBAction)handleTouchHeader2:(UIButton *)sender {
+    [_header2Btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_header1Btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    _lineX.constant = 30.0f;
+    [self.view updateConstraintsIfNeeded];
+    collectionState = UICollectionViewStateSecond;
+    [self.collectionView reloadData];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -172,4 +176,3 @@
 */
 
 @end
-

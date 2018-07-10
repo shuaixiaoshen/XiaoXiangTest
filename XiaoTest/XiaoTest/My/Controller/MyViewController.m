@@ -96,7 +96,6 @@
         make.top.mas_offset(@15);
         make.width.height.mas_offset(@75);
     }];
-   
     UILabel *moblieLab = [[UILabel alloc] initWithFrame:CGRectZero];
     moblieLab.textAlignment = NSTextAlignmentCenter;
     moblieLab.font = [UIFont systemFontOfSize:13];
