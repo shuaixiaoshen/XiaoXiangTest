@@ -13,7 +13,7 @@
 @property (copy, nonatomic) NSString *title;
 @property (strong, nonatomic) UIButton *backBtn;
 @property (assign, nonatomic) BOOL isHidden;
-
+@property (assign, nonatomic) BOOL isLine;
 @property (assign, nonatomic) BOOL isBackRootVC;
 
 @end

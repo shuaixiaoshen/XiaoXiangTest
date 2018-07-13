@@ -131,6 +131,16 @@
         make.left.mas_offset(@25);
         make.right.mas_offset(@-25);
     }];
+    _passwordField = [[UITextField alloc] init];
+    [passwordView addSubview:_passwordField];
+    _passwordField.keyboardType = UIKeyboardTypePhonePad;
+    _passwordField.placeholder = @"请输入手机验证码";
+    [_passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_offset(@0);
+        make.right.mas_offset(@-115);
+        make.bottom.mas_offset(@0);
+        make.height.mas_offset(@45);
+    }];
     _getSmsBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _getSmsBtn.backgroundColor = [UIColor colorWithRed:95 / 255.0 green:156 / 255.0 blue:249 / 255.0 alpha:1];
     [_getSmsBtn setTitle:@"获取" forState:UIControlStateNormal];
@@ -141,19 +151,9 @@
     [passwordView addSubview:_getSmsBtn];
     [_getSmsBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_offset(@0);
-        make.bottom.mas_offset(@-15);
+        make.centerY.equalTo(_passwordField);
         make.height.mas_offset(@30);
         make.width.mas_offset(@115);
-    }];
-    _passwordField = [[UITextField alloc] init];
-    [passwordView addSubview:_passwordField];
-    _passwordField.keyboardType = UIKeyboardTypePhonePad;
-    _passwordField.placeholder = @"请输入手机验证码";
-    [_passwordField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_offset(@0);
-        make.right.equalTo(_getSmsBtn.mas_left).mas_offset(3);
-        make.bottom.mas_offset(@0);
-        make.height.mas_offset(@45);
     }];
     UILabel *line1 = [[UILabel alloc] init];
     [passwordView addSubview:line1];

@@ -45,8 +45,7 @@
     titleLab.adjustsFontSizeToFitWidth = YES;
     [self addSubview:titleLab];
     _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _backBtn.frame = CGRectMake(10, 34, 15, 20);
-    _backBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    _backBtn.frame = CGRectMake(10, 34, 30, 20);
     [_backBtn setImage:[UIImage imageNamed:@"back_img"] forState:UIControlStateNormal];
     [_backBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_backBtn addTarget:self action:@selector(popToRootController) forControlEvents:UIControlEventTouchUpInside];
@@ -55,6 +54,15 @@
         UILabel *line = [[UILabel alloc] initWithFrame:CGRectMake(0, 63.5, KscreenWidth, 0.5)];
         line.backgroundColor = [UIColor lightGrayColor];
         [self addSubview:line];
+    }
+   
+}
+
+- (void)setIsLine:(BOOL)isLine{
+    if (isLine) {
+        UILabel *linelab = [[UILabel alloc] initWithFrame:CGRectMake(0, 63, KscreenWidth, 1)];
+        linelab.backgroundColor = [UIColor lightGrayColor];
+        [self addSubview:linelab];
     }
 }
 

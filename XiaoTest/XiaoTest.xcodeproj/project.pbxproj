@@ -77,6 +77,8 @@
 		64BAF2AE20D375580052C91F /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAF29920D375580052C91F /* UIImageView+WebCache.m */; };
 		64BAF2AF20D375580052C91F /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAF29B20D375580052C91F /* UIView+WebCache.m */; };
 		64BAF2B020D375580052C91F /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 64BAF29D20D375580052C91F /* UIView+WebCacheOperation.m */; };
+		64D4D72A20F7059A00EF0C8A /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D4D72920F7059A00EF0C8A /* OrderViewController.m */; };
+		64D4D72D20F70AD200EF0C8A /* HomeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D4D72C20F70AD200EF0C8A /* HomeDetailViewController.m */; };
 		64D58FC920DFFFB800DFD982 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D58FBD20DFFFB800DFD982 /* AFHTTPSessionManager.m */; };
 		64D58FCA20DFFFB800DFD982 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D58FC020DFFFB800DFD982 /* AFNetworkReachabilityManager.m */; };
 		64D58FCB20DFFFB800DFD982 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D58FC220DFFFB800DFD982 /* AFSecurityPolicy.m */; };
@@ -245,6 +247,10 @@
 		64BAF29B20D375580052C91F /* UIView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCache.m"; sourceTree = "<group>"; };
 		64BAF29C20D375580052C91F /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		64BAF29D20D375580052C91F /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		64D4D72820F7059A00EF0C8A /* OrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		64D4D72920F7059A00EF0C8A /* OrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		64D4D72B20F70AD200EF0C8A /* HomeDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeDetailViewController.h; sourceTree = "<group>"; };
+		64D4D72C20F70AD200EF0C8A /* HomeDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeDetailViewController.m; sourceTree = "<group>"; };
 		64D58FBB20DFFFB800DFD982 /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCompatibilityMacros.h; sourceTree = "<group>"; };
 		64D58FBC20DFFFB800DFD982 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		64D58FBD20DFFFB800DFD982 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
@@ -400,6 +406,10 @@
 			children = (
 				64AC461E20F4641D0045BB65 /* HomeViewController.h */,
 				64AC461F20F4641D0045BB65 /* HomeViewController.m */,
+				64D4D72B20F70AD200EF0C8A /* HomeDetailViewController.h */,
+				64D4D72C20F70AD200EF0C8A /* HomeDetailViewController.m */,
+				64D4D72820F7059A00EF0C8A /* OrderViewController.h */,
+				64D4D72920F7059A00EF0C8A /* OrderViewController.m */,
 			);
 			path = Controler;
 			sourceTree = "<group>";
@@ -855,8 +865,10 @@
 				64D58FC920DFFFB800DFD982 /* AFHTTPSessionManager.m in Sources */,
 				64BAF27420D372490052C91F /* SDCollectionViewCell.m in Sources */,
 				64BAF2AE20D375580052C91F /* UIImageView+WebCache.m in Sources */,
+				64D4D72A20F7059A00EF0C8A /* OrderViewController.m in Sources */,
 				64BAF2AC20D375580052C91F /* UIImage+MultiFormat.m in Sources */,
 				64BAF2AA20D375580052C91F /* UIButton+WebCache.m in Sources */,
+				64D4D72D20F70AD200EF0C8A /* HomeDetailViewController.m in Sources */,
 				64D58FD420E0606700DFD982 /* NaviBarView.m in Sources */,
 				647E0B1C20F1817D00DD9FDD /* CetificateHeaderView.m in Sources */,
 				6454C7AB20CF8E4A00157BD4 /* ViewController+MASAdditions.m in Sources */,
@@ -1031,10 +1043,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RUHDR258V2;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XiaoTest/PrefixHeader.pch";
 				INFOPLIST_FILE = XiaoTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1051,10 +1065,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RUHDR258V2;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XiaoTest/PrefixHeader.pch";
 				INFOPLIST_FILE = XiaoTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

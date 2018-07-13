@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "HomeDetailViewController.h"
 #import "HeaderViewCell.h"
 #import "HomeFistrCell.h"
 #import "HomeSecondCell.h"
@@ -34,6 +35,7 @@ typedef NS_ENUM(NSInteger, UICollectionViewState) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self getToken];
     collectionState = UICollectionViewStateFirst;
     [_collectionView registerNib:[UINib nibWithNibName:@"HomeThirdCell" bundle:nil] forCellWithReuseIdentifier:@"HomeThirdCell"];
     [_collectionView registerNib:[UINib nibWithNibName:@"HomeSecondCell" bundle:nil] forCellWithReuseIdentifier:@"HomeSecondCell"];
@@ -141,6 +143,13 @@ typedef NS_ENUM(NSInteger, UICollectionViewState) {
     }
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (collectionState == UICollectionViewStateFirst) {
+        HomeDetailViewController *detailVc = [[HomeDetailViewController alloc] init];
+        detailVc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:detailVc animated:YES];
+    }
+}
 
 - (IBAction)handleTouchHeader1:(UIButton *)sender {
     [_header1Btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -158,6 +167,8 @@ typedef NS_ENUM(NSInteger, UICollectionViewState) {
     collectionState = UICollectionViewStateSecond;
     [self.collectionView reloadData];
 }
+
+
 
 
 - (void)didReceiveMemoryWarning {
